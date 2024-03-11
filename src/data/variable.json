@@ -1,0 +1,51 @@
+[
+  {
+    "idmodulo": "1",
+    "idsubmodulo": "1",
+    "variables": [
+      {
+        "id": "1",
+        "capitulo": "Capitulo 1",
+        "variables": ["Variable 1", "variable2"]
+      }
+    ]
+  },
+  {
+    "idmodulo": "1",
+    "idsubmodulo": "2",
+    "variables": [
+      {
+        "id": "1",
+        "capitulo": "Capitulo 2",
+        "variables": ["Variable 1", "Variable 2", "Variable 3"]
+      },
+      {
+        "id": "2",
+        "capitulo": "Capitulo 3",
+        "variables": ["Variable 4", "Variable 5", "Variable 6"]
+      }
+    ]
+  },
+  {
+    "idmodulo": "2",
+    "idsubmodulo": "1",
+    "variables": [
+      {
+        "id": "1",
+        "capitulo": "Capitulo 1",
+        "variables": ["Variable 1", "variable2"]
+      }
+    ]
+  },
+  {
+    "idmodulo": "2",
+    "idsubmodulo": "2",
+    "variables": [
+      {
+        "id": "1",
+        "capitulo": "Capitulo 2",
+        "variables": ["Variable 1", "Variable 2", "Variable 3"]
+      }
+    ]
+  }
+]

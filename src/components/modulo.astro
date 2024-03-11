@@ -1,0 +1,38 @@
+---
+import DataModulo from '../data/modulo.json'
+
+let values = Object.values(DataModulo)
+
+---
+
+  <div class="mb-2 min-h-20 flex justify-center items-center text-center text-white bg-cover bg-center py-3 px-5 rounded-t-lg" style="background-image: url(/img/bg_modulo.png)">
+    <p class="">Módulo de Cadáver</p>
+  </div>
+  <ul id="modulo" class="h-3/4 text-center bg-cover bg-center py-10 px-8 rounded-b-lg" style="background-image: url(/img/bg_modulo.png)">
+    {values.map((value) => (
+      <li data-modulo={value.id} class="mb-2 py-2 rounded-xl border-2 text-white">{value.nombre}</li>
+      ))}
+  </ul>
+
+
+<script>
+  import DataSubModulo from '../data/submodulo.json'
+  import {moduloId, addSubModulo} from '../store.js'
+
+  function obtainLi(e) {
+    if (e.target && e.target.matches("li")) {
+      const ulmodulo = document.querySelectorAll('#modulo li');
+      ulmodulo.forEach(element => {
+        element.classList.remove('bg-yellow-300', 'text-black', 'border-yellow-300');
+        element.classList.add('text-white');
+      });
+      const liData = e.target.getAttribute('data-modulo')
+      e.target.classList.add('bg-yellow-300', 'text-black', 'border-yellow-300');
+      e.target.classList.remove('text-white');
+      moduloId.set(Number(liData));
+      const submodulos = DataSubModulo.find(({idmodulo}) => idmodulo === moduloId.get())
+      addSubModulo(submodulos)
+    }
+  }
+  document.getElementById('modulo')!.addEventListener('click', obtainLi);
+</script>

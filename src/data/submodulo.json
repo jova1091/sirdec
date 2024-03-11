@@ -1,0 +1,16 @@
+[
+  {
+    "idmodulo": 1,
+    "submodulos": [
+      { "id": 1, "nombre": "modulo 1 sub modulo 1" },
+      { "id": 2, "nombre": "modulo 1 sub modulo 2" }
+    ]
+  },
+  {
+    "idmodulo": 2,
+    "submodulos": [
+      { "id": 1, "nombre": "modulo 2 sub modulo 1" },
+      { "id": 2, "nombre": "modulo 2 sub modulo 2" }
+    ]
+  }
+]
