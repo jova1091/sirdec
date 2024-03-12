@@ -10,7 +10,7 @@ let values = Object.values(DataModulo)
   </div>
   <ul id="modulo" class="h-3/4 text-center bg-cover bg-center py-10 px-8 rounded-b-lg" style="background-image: url(/img/bg_modulo.png)">
     {values.map((value) => (
-      <li data-modulo={value.id} class="mb-2 py-2 rounded-xl border-2 text-white">{value.nombre}</li>
+      <li data-modulo={value.id} class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:bg-yellow-300 hover:text-black hover:border-yellow-300 transition-all delay-[0.25s] ease-out">{value.nombre}</li>
       ))}
   </ul>
 

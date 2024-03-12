@@ -18,7 +18,7 @@
       @click="setSubModulo(submodulo.id)"
       v-bind:ref="submodulo.id"
       v-bind:class="{ active: isActive }"
-      class="mb-2 py-2 rounded-xl border-2 text-white"
+      class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:text-white hover:bg-[#214361] hover:border-[#214361] transition-all delay-[0.25s] ease-out"
     >
       {{ submodulo.nombre }}
     </li>
