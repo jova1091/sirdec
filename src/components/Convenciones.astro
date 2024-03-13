@@ -1,33 +1,33 @@
 ---
-import Header from '../components/Header.astro'
 import Modal from '../components/Modal.astro'
-
-let title = 'SIRDEC';
 ---
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width" />
-  <title>{title}</title>
-  <Header />	
-</head>
-<body>
-<article class="h-dvh bg-cover bg-center" style="background-image: url(/img/bg_inicio.png)">
-  <div class="container columns-1 mx-auto flex justify-center items-center content-center w-full h-full">
-    <img src="/img/intro.png" class="max-w-80" alt="">
-    <div class="mt-10">
-      <div class="columns-1 text-balance text-white ms-5 ps-14 border-l">
-        <h1 class="text-7xl mt-2 mb-7">Titulo</h1>
-        <p class="mb-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias saepe officiis ea exercitationem consectetur! Neque sed quos illum id numquam architecto! Harum, vero omnis a corporis quibusdam repellat sed quisquam!
-          Placeat quidem consectetur accusantium corrupti, iusto eligendi maxime deserunt vel voluptates, veritatis alias provident minima, nihil dolore impedit! Aliquid rem, cupiditate quas harum labore doloribus veniam vel provident eaque iste.
-        </p>
-        <p class="mb-10">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias saepe officiis ea exercitationem consectetur! Neque sed quos illum id numquam architecto! Harum, vero omnis a corporis quibusdam repellat sed quisquam!
-          Placeat quidem consectetur accusantium corrupti, iusto eligendi maxime deserunt vel voluptates, veritatis alias provident minima, nihil dolore impedit! Aliquid rem, cupiditate quas harum labore doloribus veniam vel provident eaque iste.
-        </p>
+<div class="grid grid-cols-2 mb-3">
+  <div class="grid grid-cols-3 gap-2 items-center">
+      <h5 class="font-bold text-l">Módulo de Cadáver</h5>
+      <div class="border-l border-black px-4 py-2">
+        <p class="mb-1"><span class="color bg-[#FFD671]"></span> MC-Recepción del Cadáver</p>
+        <p><span class="color bg-[#47C0A8]"></span> MC-Entrega de cadáveres</p>
       </div>
-      <div class="w-full flex justify-end mt-7">
-        <Modal id="instrucciones" open="Instrucciones">
+      <div class="px-4 py-2">
+        <p class="mb-1"><span class="color bg-[#579AE1]"></span> MC-Recepción del Cadáver</p>
+        <p><span class="color bg-[#CCC5B8]"></span> MC-Entrega de cadáveres</p>
+      </div>
+  </div>
+  <div class="flex justify-end content-center items-center">
+    <div class="flex mr-6">
+      <img src="/img/ver.png" class="w-5 h-5 mr-3" alt="">
+      <h5 class="font-bold text-l">Lorem</h5>
+    </div>
+    <div class="flex mr-6">
+      <img src="/img/expandir.png" class="w-5 h-5 mr-3" alt="">
+      <h5 class="font-bold text-l">Dar Clic</h5>
+    </div>
+    <div class="flex mr-6">
+      <img src="/img/inicio.png" class="w-5 h-5 mr-3" alt="">
+      <h5 class="font-bold text-l">Inicio</h5>
+    </div>
+    <div>
+      <Modal id="instrucciones" open="Instrucciones" color="#47C0A8">
           <button class="text-4xl font-light block hover:font-bold" slot="close">X</button>
           <main slot="main">
             <div class="container mb-9 px-8 grid grid-cols-2 gap-5 text-pretty ">
@@ -73,19 +73,15 @@ let title = 'SIRDEC';
             </div>
           </main>
         </Modal>
-        <a href="/intro" class="border text-white hover:border-[#FFDA71] hover:bg-[#FFDA71] hover:text-black mr-3 py-1 px-3 rounded-3xl flex justify-center transition-all delay-[0.25s] ease-out" target="_self" rel="noopener noreferrer">Comenzar 
-          <lord-icon class="ms-2"
-              src="https://cdn.lordicon.com/vduvxizq.json"
-              trigger="loop"
-              delay="2000"
-              colors="primary:#000000"
-              style="width:25px;height:25px">
-          </lord-icon>
-        </a>
-      </div>
     </div>
   </div>
-</article>
-<script src="https://cdn.lordicon.com/lordicon.js"></script>
-</body>
-</html>
+</div>
+
+<style>
+  .color {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    display: inline-block;
+  }
+</style>

@@ -1,4 +1,6 @@
 [
-  { "id": "1", "nombre": "Modulo 1" },
-  { "id": "2", "nombre": "Modulo 2" }
+  { "id": "1", "nombre": "MC-Recepción del Cadáver" },
+  { "id": "2", "nombre": "MC-Proceso de Necropsia" },
+  { "id": "3", "nombre": "MC-Entrega de cadáveres" },
+  { "id": "4", "nombre": "MC-Asignación de Perito" }
 ]

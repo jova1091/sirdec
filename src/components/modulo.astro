@@ -4,16 +4,18 @@ import DataModulo from '../data/modulo.json'
 let values = Object.values(DataModulo)
 
 ---
-
+<div class="flex flex-col">
   <div class="mb-2 min-h-20 flex justify-center items-center text-center text-white bg-cover bg-center py-3 px-5 rounded-t-lg" style="background-image: url(/img/bg_modulo.png)">
     <p class="">Módulo de Cadáver</p>
   </div>
-  <ul id="modulo" class="h-3/4 text-center bg-cover bg-center py-10 px-8 rounded-b-lg" style="background-image: url(/img/bg_modulo.png)">
-    {values.map((value) => (
-      <li data-modulo={value.id} class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:bg-yellow-300 hover:text-black hover:border-yellow-300 transition-all delay-[0.25s] ease-out">{value.nombre}</li>
-      ))}
-  </ul>
-
+  <div class="flex-1">
+    <ul id="modulo" class="h-full text-center bg-cover bg-center py-10 px-8 rounded-b-lg" style="background-image: url(/img/bg_modulo.png)">
+      {values.map((value) => (
+        <li data-modulo={value.id} class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:bg-yellow-300 hover:text-black hover:border-yellow-300 transition-all delay-[0.25s] ease-out">{value.nombre}</li>
+        ))}
+    </ul>
+  </div>
+  </div>
 
 <script>
   import DataSubModulo from '../data/submodulo.json'

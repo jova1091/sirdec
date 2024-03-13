@@ -1,0 +1,42 @@
+---
+const {id, open, color} = Astro.props;
+---
+<style>
+  dialog {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 80dvw;
+    width: 80vw;
+    height: 80dvh;
+    height: 80vh;
+  }
+  dialog::backdrop {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(17, 35, 61, 0.7);
+  }
+</style>
+
+<button 
+  onclick=`document.getElementById("${id}").showModal()`
+  class=`border text-white bg-[${color}] hover:border-[#FFDA71] hover:bg-[#FFDA71] hover:text-black mr-3 py-1 px-3 rounded-3xl flex justify-center transition-all delay-[0.25s] ease-out`
+>
+  {open}
+</button>
+
+<dialog id=`${id}` class="bg-[#FFDA71] rounded-3xl py-8 px-16">
+  <div class=" h-full">
+    <div class="flex justify-end mb-3">
+      <form method="dialog">
+        <slot name="close" />
+      </form>
+    </div>
+    <div class="h-4/5 flex items-center">
+      <slot name="main" />
+    </div>
+  </div>
+</dialog>

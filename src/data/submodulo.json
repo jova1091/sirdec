@@ -2,15 +2,31 @@
   {
     "idmodulo": 1,
     "submodulos": [
-      { "id": 1, "nombre": "modulo 1 sub modulo 1" },
-      { "id": 2, "nombre": "modulo 1 sub modulo 2" }
+      { "id": 1, "nombre": "Registro Inicial del Caso" },
+      { "id": 2, "nombre": "Datos Personales" }
     ]
   },
   {
     "idmodulo": 2,
     "submodulos": [
-      { "id": 1, "nombre": "modulo 2 sub modulo 1" },
-      { "id": 2, "nombre": "modulo 2 sub modulo 2" }
+      { "id": 1, "nombre": "Detalle del lugar de los Hechos" },
+      { "id": 2, "nombre": "Información de la Necropsia" },
+      { "id": 3, "nombre": "Conclusión Pericial" },
+      { "id": 4, "nombre": "Datos Personales" },
+      { "id": 5, "nombre": "Pertenencia Grupal" },
+      { "id": 6, "nombre": "Seguridad Social" },
+      { "id": 7, "nombre": "Detalle Muerte Fetal y menor 1 año" }
+    ]
+  },
+  {
+    "idmodulo": 3,
+    "submodulos": [{ "id": 1, "nombre": "Dirección Persona Fallecida" }]
+  },
+  {
+    "idmodulo": 4,
+    "submodulos": [
+      { "id": 1, "nombre": "Dato Predeterminado" },
+      { "id": 2, "nombre": "Necropsia Perito" }
     ]
   }
 ]

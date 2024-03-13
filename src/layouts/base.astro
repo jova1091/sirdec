@@ -1,18 +1,21 @@
 ---
 import Header from '../components/Header.astro'
 import Navbar from '../components/Navbar.astro'
+
+let title = 'SIRDEC';
 ---
-<html lang="en">
+<html lang="es">
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
+		<title>{title}</title>
 		<Header />	
 	</head>
 	<body>
 		<div class="w-full h-dvh">
 			<Navbar />
-			<div class="h-[calc(100vh-90px)] bg-[#EEEEEE] mx-auto">
+			<div class="min-h-[calc(100vh-90px)] bg-[#EEEEEE] mx-auto">
 				<slot />
 			</div>
 		</div>
