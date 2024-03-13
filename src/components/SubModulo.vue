@@ -8,15 +8,15 @@
     </div>
     <div class="flex-1">
       <ul
-        ref="el"
         id="submodulo"
         v-if="Object.values($subModulo).length"
         class="h-full text-center bg-cover bg-center py-10 px-8 rounded-b-lg"
         style="background-image: url(/img/bg_submodulo.png)"
       >
         <li
-          v-for="submodulo in Object.values($subModulo)"
-          @click="[setSubModulo(submodulo.id), obtainLi(el)]"
+          v-for="submodulo in $subModulo"
+          v-bind:id="`sub_${submodulo.id}`"
+          @click="[setSubModulo(submodulo.id), obtainLi(submodulo.id)]"
           v-bind:data-subModulo="submodulo.id"
           class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:text-white hover:bg-[#214361] hover:border-[#214361] transition-all delay-[0.25s] ease-out"
         >
@@ -32,10 +32,8 @@
 import { moduloId, subModulo, subModuloId, addVariables } from "../store";
 import { useStore } from "@nanostores/vue";
 import DataVariables from "../data/variable.json";
-import { ref, onBeforeUpdate } from "vue";
 
 const $subModulo = useStore(subModulo);
-const el = ref();
 
 function setSubModulo(idSubModulo) {
   subModuloId.set(idSubModulo);
@@ -54,20 +52,14 @@ function setSubModulo(idSubModulo) {
   addVariables(variables[0]);
 }
 
-onBeforeUpdate(() => {
-  console.log(el);
-  obtainLi(el);
-});
-
-function obtainLi(e) {
-  if (e.target && e.target.matches("li")) {
+function obtainLi(el) {
+  let elem = document.getElementById("sub_" + el);
+  if (elem && elem.matches("li")) {
     const ulsubmodulo = document.querySelectorAll("#submodulo li");
     ulsubmodulo.forEach((element) => {
-      element.classList.remove("bg-yellow-300", "text-black", "border-yellow-300");
-      element.classList.add("text-white");
+      element.classList.remove("bg-[#214361]", "border-[#214361]");
     });
-    e.target.classList.add("bg-yellow-300", "text-black", "border-yellow-300");
-    e.target.classList.remove("text-white");
+    elem.classList.add("bg-[#214361]", "border-[#214361]");
   }
 }
 </script>
