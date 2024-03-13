@@ -12,7 +12,7 @@ import Modulo from '../components/Modulo.astro';
   </div>
   <div class="block relative my-6">
     <div class="container columns-3 mx-auto grid grid-cols-3 gap-28 text-pretty">
-      <Modulo/>
+      <Modulo client:visible/>
       <SubModulo client:load/>
       <Variable client:load/>
     </div>
