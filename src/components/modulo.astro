@@ -1,7 +1,7 @@
 ---
-import DataModulo from '../data/modulo.json'
+import DataModulo from '../data/modulo.json';
 
-let values = Object.values(DataModulo)
+const values = Object.values(DataModulo);
 
 ---
 <div class="flex flex-col">
@@ -11,19 +11,19 @@ let values = Object.values(DataModulo)
   <div class="flex-1">
     <ul id="modulo" class="h-full text-center bg-cover bg-center py-10 px-8 rounded-b-lg" style="background-image: url(/img/bg_modulo.png)">
       {values.map((value) => (
-        <li id=`mod_${value.id}` data-modulo={value.id} class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:bg-yellow-300 hover:text-black hover:border-yellow-300 transition-all delay-[0.25s] ease-out">{value.nombre}</li>
+        <li data-modulo={value.id} class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:bg-yellow-300 hover:text-black hover:border-yellow-300 transition-all delay-[0.25s] ease-out">{value.nombre}</li>
         ))}
     </ul>
   </div>
   </div>
 
 <script>
-  import DataSubModulo from '../data/submodulo.json'
-  import {moduloId, addSubModulo} from '../store.js'
+  import DataSubModulo from '../data/submodulo.json';
+  import {moduloId, addSubModulo} from '../store.js';
 
   const ulModulo = document.querySelectorAll('#modulo li');
 
-   ulModulo.forEach((liElem) => {
+  ulModulo.forEach((liElem) => {
     liElem.addEventListener('click', () => {
       obtainLi(liElem)
     });
@@ -31,7 +31,7 @@ let values = Object.values(DataModulo)
 
   function obtainLi(e) {
     if (e && e.matches("li")) {
-      const ulmodulo = document.querySelectorAll('#modulo li');
+      const ulmodulo = document.querySelectorAll('#modulo li'); 
       ulmodulo.forEach((element) => {
         element.classList.remove('bg-yellow-300', 'text-black', 'border-yellow-300');
         element.classList.add('text-white');
