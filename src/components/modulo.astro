@@ -32,7 +32,7 @@ let values = Object.values(DataModulo)
   function obtainLi(e) {
     if (e && e.matches("li")) {
       const ulmodulo = document.querySelectorAll('#modulo li');
-      ulmodulo.forEach(element => {
+      ulmodulo.forEach((element) => {
         element.classList.remove('bg-yellow-300', 'text-black', 'border-yellow-300');
         element.classList.add('text-white');
       });
