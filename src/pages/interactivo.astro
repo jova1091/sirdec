@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/base.astro';
 import Convenciones from '../components/Convenciones.astro';
+import Modulo from '../components/Modulo.vue';
 import Variable from '../components/Variable.vue';
 import SubModulo from '../components/SubModulo.vue';
-import Modulo from '../components/Modulo.astro';
 
 --- 
 <BaseLayout>
@@ -12,7 +12,7 @@ import Modulo from '../components/Modulo.astro';
   </div>
   <div class="block relative my-6">
     <div class="container columns-3 mx-auto grid grid-cols-3 gap-28 text-pretty">
-      <Modulo client:idle/>
+      <Modulo client:load/>
       <SubModulo client:load/>
       <Variable client:load/>
     </div>
