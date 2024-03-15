@@ -9,7 +9,7 @@
     <div
       v-if="Object.values($variables).length"
       class="h-full text-center bg-cover bg-center py-10 px-8 rounded-b-lg"
-      style="background-image: url(/sirdec/img/bg_variable.png)"
+      v-bind:style="{ 'background-image': 'url(' + $image + ')' }"
     >
       <div class="wrap-collabsible" v-for="capitulo in Object.values($variables)" v-bind:data-variable="capitulo">
         <input v-bind:id="capitulo.id" class="toggle" type="checkbox" />
@@ -39,6 +39,8 @@ import { variable } from "../store";
 import { useStore } from "@nanostores/vue";
 
 const $variables = useStore(variable);
+const GENPATH = import.meta.env.BASE_URL;
+const $image = GENPATH + "/img/bg_variable.png";
 </script>
 
 <style scoped>

@@ -11,7 +11,7 @@
         id="modulo"
         v-if="$values"
         class="h-full text-center bg-cover bg-center py-10 px-8 rounded-b-lg"
-        style="background-image: url(/sirdec/img/bg_modulo.png)"
+        v-bind:style="{ 'background-image': 'url(' + $image + ')' }"
       >
         <li
           v-for="value in $values"
@@ -35,7 +35,8 @@ import { useStore } from "@nanostores/vue";
 
 addModulo(DataModulo);
 const $values = useStore(modulo);
-console.log($values);
+const GENPATH = import.meta.env.BASE_URL;
+const $image = GENPATH + "/img/bg_modulo.png";
 
 function obtainLi(el) {
   let elem = document.getElementById("mod_" + el);

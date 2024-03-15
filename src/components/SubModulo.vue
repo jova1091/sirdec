@@ -11,7 +11,7 @@
         id="submodulo"
         v-if="Object.values($subModulo).length"
         class="h-full text-center bg-cover bg-center py-10 px-8 rounded-b-lg"
-        style="background-image: url(/sirdec/img/bg_submodulo.png)"
+        v-bind:style="{ 'background-image': 'url(' + $image + ')' }"
       >
         <li
           v-for="submodulo in $subModulo"
@@ -34,6 +34,8 @@ import { useStore } from "@nanostores/vue";
 import DataVariables from "../data/variable.json";
 
 const $subModulo = useStore(subModulo);
+const GENPATH = import.meta.env.BASE_URL;
+const $image = GENPATH + "/img/bg_submodulo.png";
 
 function setSubModulo(idSubModulo) {
   subModuloId.set(idSubModulo);
