@@ -2,6 +2,8 @@
 import Header from '../components/Header.astro'
 import Modal from '../components/Modal.astro'
 
+const GENPATH = import.meta.env.BASE_URL + "/";
+
 let title = 'SIRDEC';
 ---
 <html lang="es">
@@ -13,9 +15,9 @@ let title = 'SIRDEC';
   <Header />	
 </head>
 <body>
-<article class="h-dvh bg-cover bg-center" style="background-image: url(/img/bg_inicio.png)">
+<article class="h-dvh bg-cover bg-center" style=`"background-image: url(${GENPATH}/img/bg_inicio.png)"`>
   <div class="container columns-1 mx-auto flex justify-center items-center content-center w-full h-full">
-    <img src="/img/intro.png" class="max-w-80" alt="">
+    <img src=`"${GENPATH}/img/intro.png"` class="max-w-80" alt="">
     <div class="mt-10">
       <div class="columns-1 text-balance text-white ms-5 ps-14 border-l">
         <h1 class="text-7xl mt-2 mb-7">Titulo</h1>
@@ -36,35 +38,35 @@ let title = 'SIRDEC';
             </div>
             <div class="container px-8 grid grid-cols-3 gap-5 text-pretty">
               <div class="flex gap-5">
-                <img src="/img/ver.png" class="border rounded-lg border-black p-7 w-28 h-28" alt="">
+                <img src=`"${GENPATH}/img/ver.png"` class="border rounded-lg border-black p-7 w-28 h-28" alt="">
                 <div class="flex items-center content-center flex-wrap">
                   <h5 class="font-bold text-2xl">Lorem</h5>
                   <p>Haz clic en el botón con el ícono de un ojo para abrir el campo de información</p>
                 </div>
               </div>
               <div class="flex gap-5">
-                <img src="/img/cerrar.png" class="border rounded-lg border-black p-7 w-28 h-28" alt="">
+                <img src=`"${GENPATH}/img/cerrar.png"` class="border rounded-lg border-black p-7 w-28 h-28" alt="">
                 <div class="flex items-center content-center flex-wrap">
                   <h5 class="font-bold text-2xl">Cerrar</h5>
                   <p>Al hacer clic en este botón, se cerrará el elemento activo y volverás al contexto anterior.</p>
                 </div>
               </div>
               <div class="flex gap-5">
-                <img src="/img/inicio.png" class="border rounded-lg border-black p-7 w-28 h-28" alt="">
+                <img src=`"${GENPATH}/img/inicio.png"` class="border rounded-lg border-black p-7 w-28 h-28" alt="">
                 <div class="flex items-center content-center flex-wrap">
                   <h5 class="font-bold text-2xl">Inicio</h5>
                   <p>Al hacer clic en este botón, serás redirigido a la página principal </p>
                 </div>
               </div>
               <div class="flex gap-5">
-                <img src="/img/expandir.png" class="border rounded-lg border-black p-7 w-28 h-28" alt="">
+                <img src=`"${GENPATH}/img/expandir.png"` class="border rounded-lg border-black p-7 w-28 h-28" alt="">
                 <div class="flex items-center content-center flex-wrap">
                   <h5 class="font-bold text-2xl">Expandir</h5>
                   <p>Haz clic en este botón para ampliar o desplegar el contenido asociado.</p>
                 </div>
               </div>
               <div class="flex gap-5">
-                <img src="/img/desplegar.png" class="border rounded-lg border-black p-7 w-28 h-28" alt="">
+                <img src=`"${GENPATH}/img/desplegar.png"` class="border rounded-lg border-black p-7 w-28 h-28" alt="">
                 <div class="flex items-center content-center flex-wrap">
                   <h5 class="font-bold text-2xl">Desplegar</h5>
                   <p>Haz clic en el botón o casilla de selección para  ir al campo de información</p>
