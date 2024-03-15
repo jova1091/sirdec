@@ -2,7 +2,7 @@
   <div class="flex flex-col">
     <div
       class="mb-2 min-h-20 flex justify-center items-center text-center text-white bg-cover bg-center py-3 px-5 rounded-t-lg"
-      style="background-image: url(/img/bg_submodulo.png)"
+      style="background-image: url(/sirdec/img/bg_submodulo.png)"
     >
       <p class="">Sub Módulo del SIRDEC a la que corresponde la información</p>
     </div>
@@ -11,7 +11,7 @@
         id="submodulo"
         v-if="Object.values($subModulo).length"
         class="h-full text-center bg-cover bg-center py-10 px-8 rounded-b-lg"
-        style="background-image: url(/img/bg_submodulo.png)"
+        style="background-image: url(/sirdec/img/bg_submodulo.png)"
       >
         <li
           v-for="submodulo in $subModulo"

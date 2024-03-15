@@ -2,14 +2,14 @@
   <div class="flex flex-col">
     <div
       class="mb-2 min-h-20 flex justify-center items-center text-center text-white bg-cover bg-center py-3 px-5 rounded-t-lg"
-      style="background-image: url(/img/bg_variable.png)"
+      style="background-image: url(/sirdec/img/bg_variable.png)"
     >
       <p class="">Variable RUAFND</p>
     </div>
     <div
       v-if="Object.values($variables).length"
       class="h-full text-center bg-cover bg-center py-10 px-8 rounded-b-lg"
-      style="background-image: url(/img/bg_variable.png)"
+      style="background-image: url(/sirdec/img/bg_variable.png)"
     >
       <div class="wrap-collabsible" v-for="capitulo in Object.values($variables)" v-bind:data-variable="capitulo">
         <input v-bind:id="capitulo.id" class="toggle" type="checkbox" />

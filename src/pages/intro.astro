@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../layouts/base.astro'
+const GENPATH = import.meta.env.BASE_URL;
 ---
 <BaseLayout>
-<img src="/img/head.png" class="w-full mb-8" alt="">
+<img src=`${GENPATH}/img/head.png` class="w-full mb-8" alt="">
 <div class="container mx-auto grid grid-cols-3 gap-5 text-pretty">
   <p>Para el caso de las defunciones de interés forense, el proceso de certificación se realiza desde plataforma de SIRDEC, para ello debe realizar un correcto diligenciamiento de las variables que se encuentran en los diferentes sub módulos del modulo de cadáveres. 
   </p>

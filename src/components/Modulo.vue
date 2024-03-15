@@ -2,7 +2,7 @@
   <div class="flex flex-col">
     <div
       class="mb-2 min-h-20 flex justify-center items-center text-center text-white bg-cover bg-center py-3 px-5 rounded-t-lg"
-      style="background-image: url(/img/bg_modulo.png)"
+      style="background-image: url(/sirdec/img/bg_modulo.png)"
     >
       <p class="">Módulo de Cadáver</p>
     </div>
@@ -11,7 +11,7 @@
         id="modulo"
         v-if="$values"
         class="h-full text-center bg-cover bg-center py-10 px-8 rounded-b-lg"
-        style="background-image: url(/img/bg_modulo.png)"
+        style="background-image: url(/sirdec/img/bg_modulo.png)"
       >
         <li
           v-for="value in $values"
