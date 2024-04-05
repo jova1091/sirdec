@@ -6,44 +6,59 @@
     >
       <p class="">Variable RUAFND</p>
     </div>
-    <div
-      v-if="Object.values($variables).length"
-      class="h-full text-center bg-cover bg-center py-10 px-8 rounded-b-lg"
-      v-bind:style="{ 'background-image': 'url(' + $image + ')' }"
-    >
-      <div class="wrap-collabsible" v-for="capitulo in Object.values($variables)" v-bind:data-variable="capitulo">
-        <input v-bind:id="capitulo.id" class="toggle" type="checkbox" />
-        <label v-bind:for="capitulo.id" class="lbl-toggle">
-          {{ capitulo.capitulo }}
-        </label>
-        <div class="collapsible-content">
-          <div class="content-inner">
-            <ul>
-              <li
-                v-for="variable in Object.values(capitulo.variables)"
-                v-bind:data-variable="variable"
-                class="border-b py-3 px-5 text-white text-left"
-                v-html="variable"
-              ></li>
-            </ul>
+    <Transition>
+      <div v-if="$show" class="flex-1">
+        <div
+          v-if="Object.values($variables).length"
+          class="h-full text-center bg-cover bg-center py-10 px-8 rounded-b-lg"
+          v-bind:style="{ 'background-image': 'url(' + $image + ')' }"
+        >
+          <div class="wrap-collabsible" v-for="capitulo in Object.values($variables)" v-bind:data-variable="capitulo">
+            <input v-bind:id="capitulo.id" class="toggle" type="checkbox" />
+            <label v-bind:for="capitulo.id" class="lbl-toggle">
+              {{ capitulo.capitulo }}
+            </label>
+            <div class="collapsible-content">
+              <div class="content-inner">
+                <ul>
+                  <li
+                    v-for="variable in Object.values(capitulo.variables)"
+                    v-bind:data-variable="variable"
+                    class="border-b py-3 px-5 text-white text-left"
+                    v-html="variable"
+                  ></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
+        <p v-else></p>
       </div>
-    </div>
-    <p v-else></p>
+      <p v-else></p>
+    </Transition>
   </div>
 </template>
 
 <script setup>
-import { variable } from "../store";
+import { variable, show } from "../store";
 import { useStore } from "@nanostores/vue";
 
+const $show = useStore(show);
 const $variables = useStore(variable);
 const GENPATH = import.meta.env.BASE_URL;
 const $image = GENPATH + "/img/bg_variable.png";
 </script>
 
 <style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 input[type="checkbox"] {
   display: none;
 }

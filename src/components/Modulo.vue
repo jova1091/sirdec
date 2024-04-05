@@ -30,7 +30,7 @@
 <script setup>
 import DataModulo from "../data/modulo.json";
 import DataSubModulo from "../data/submodulo.json";
-import { moduloId, addSubModulo, addModulo, modulo } from "../store.js";
+import { moduloId, addVariables, addSubModulo, addModulo, modulo, show } from "../store.js";
 import { useStore } from "@nanostores/vue";
 
 addModulo(DataModulo);
@@ -39,19 +39,47 @@ const GENPATH = import.meta.env.BASE_URL;
 const $image = GENPATH + "/img/bg_modulo.png";
 
 function obtainLi(el) {
+  show.set(false);
+  let variables = [];
   let elem = document.getElementById("mod_" + el);
   if (elem && elem.matches("li")) {
     const ulmodulo = document.querySelectorAll("#modulo li");
     ulmodulo.forEach((element) => {
-      element.classList.remove("bg-yellow-300", "text-black", "border-yellow-300");
+      element.classList.remove("bg-yellow-300", "text-black", "border-yellow-300", "active");
       element.classList.add("text-white");
     });
     const liData = elem.getAttribute("data-modulo");
-    elem.classList.add("bg-yellow-300", "text-black", "border-yellow-300");
+    elem.classList.add("bg-yellow-300", "text-black", "border-yellow-300", "active");
     elem.classList.remove("text-white");
     moduloId.set(Number(liData));
     const submodulos = DataSubModulo.find(({ idmodulo }) => idmodulo === moduloId.get());
+    show.set(true);
     addSubModulo(submodulos);
+    addVariables(variables);
   }
 }
 </script>
+
+<style>
+li {
+  position: relative;
+}
+li::before {
+  visibility: hidden;
+  content: " ";
+  position: absolute;
+  width: 150px;
+  height: 3px;
+  background: rgb(255, 218, 113);
+  background: linear-gradient(90deg, rgba(255, 218, 113, 1) 0%, rgba(71, 196, 172, 1) 40%, rgba(87, 158, 229, 1) 100%);
+  border-radius: 20px;
+  right: 0px;
+  top: calc(50% - 1.5px);
+  transition: all 0.5s linear;
+}
+
+li.active::before {
+  visibility: visible;
+  right: -147px;
+}
+</style>

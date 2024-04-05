@@ -13,8 +13,8 @@ import SubModulo from '../components/SubModulo.vue';
   <div class="block relative my-6">
     <div class="container columns-3 mx-auto grid grid-cols-3 gap-28 text-pretty">
       <Modulo client:load/>
-      <SubModulo client:load/>
-      <Variable client:load/>
+      <SubModulo :key="subModuloKey" client:load/>
+      <Variable :key="variableKey" client:load/>
     </div>
   </div>
   <div class="container columns-1 mx-auto">
