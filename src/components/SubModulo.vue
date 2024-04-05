@@ -2,7 +2,7 @@
   <div class="flex flex-col">
     <div
       class="mb-2 min-h-20 flex justify-center items-center text-center text-white bg-cover bg-center py-3 px-5 rounded-t-lg"
-      style="background-image: url(/sirdec/img/bg_submodulo.png)"
+      v-bind:style="{ 'background-image': 'url(' + $image + ')' }"
     >
       <p class="">Sub Módulo del SIRDEC a la que corresponde la información</p>
     </div>

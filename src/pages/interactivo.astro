@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/base.astro';
+import { fade } from "astro:transitions";
 import Convenciones from '../components/Convenciones.astro';
 import Modulo from '../components/Modulo.vue';
 import Variable from '../components/Variable.vue';
@@ -10,7 +11,7 @@ import SubModulo from '../components/SubModulo.vue';
   <div class="container columns-1 mx-auto text-center text-pretty">
     <p class="my-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta obcaecati officiis similique ea odio cupiditate veniam, ratione mollitia atque qui vitae temporibus, exercitationem aut ex cumque fuga magni facere nam?</p>
   </div>
-  <div class="block relative my-6">
+  <div class="block relative my-6 main min-h-[calc(100vh-280px)]">
     <div class="container columns-3 mx-auto grid grid-cols-3 gap-28 text-pretty">
       <Modulo client:load/>
       <SubModulo :key="subModuloKey" client:load/>
