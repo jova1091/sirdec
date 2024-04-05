@@ -54,7 +54,6 @@ function setSubModulo(idSubModulo) {
     return true;
   });
 
-  removeActiveLi();
   addVariables(variables[0]);
 }
 
