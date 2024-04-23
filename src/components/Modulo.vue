@@ -60,7 +60,7 @@ function obtainLi(el) {
 }
 </script>
 
-<style>
+<style scoped>
 li {
   position: relative;
 }
