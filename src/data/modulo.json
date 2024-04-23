@@ -1,6 +1,7 @@
 [
   { "id": "1", "nombre": "MC-Recepción del Cadáver" },
   { "id": "2", "nombre": "MC-Proceso de Necropsia" },
-  { "id": "3", "nombre": "MC-Entrega de cadáveres" },
-  { "id": "4", "nombre": "MC-Asignación de Perito" }
+  { "id": "3", "nombre": "MC-Asignación de Perito" },
+  { "id": "4", "nombre": "MC-Recepción de Elementos" },
+  { "id": "5", "nombre": "MC-Entrega de cadáveres" }
 ]

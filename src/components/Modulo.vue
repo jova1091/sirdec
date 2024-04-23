@@ -91,6 +91,10 @@ li:nth-child(3):hover {
   border-color: #6ba538;
 }
 li:nth-child(4):hover {
+  background: #e29e05;
+  border-color: #e29e05;
+}
+li:nth-child(5):hover {
   background: #868686;
   border-color: #868686;
 }
@@ -110,6 +114,10 @@ li.active:nth-child(3) {
   border-color: #6ba538;
 }
 li.active:nth-child(4) {
+  background: #e29e05;
+  border-color: #e29e05;
+}
+li.active:nth-child(5) {
   background: #868686;
   border-color: #868686;
 }

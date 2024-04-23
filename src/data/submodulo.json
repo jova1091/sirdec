@@ -2,31 +2,32 @@
   {
     "idmodulo": 1,
     "submodulos": [
-      { "id": 1, "nombre": "Registro Inicial del Caso" },
-      { "id": 2, "nombre": "Datos Personales" }
+      { "id": 1, "nombre": "Datos Personales" },
+      { "id": 2, "nombre": "Registro Inicial del Caso" }
     ]
   },
   {
     "idmodulo": 2,
     "submodulos": [
       { "id": 1, "nombre": "Detalle del lugar de los Hechos" },
-      { "id": 2, "nombre": "Información de la Necropsia" },
-      { "id": 3, "nombre": "Conclusión Pericial" },
-      { "id": 4, "nombre": "Datos Personales" },
-      { "id": 5, "nombre": "Pertenencia Grupal" },
-      { "id": 6, "nombre": "Seguridad Social" },
+      { "id": 2, "nombre": "Datos Personales" },
+      { "id": 3, "nombre": "Información de la Necropsia" },
+      { "id": 4, "nombre": "Conclusión Pericial" },
+      { "id": 5, "nombre": "Seguridad Social" },
+      { "id": 6, "nombre": "Pertenencia Grupal" },
       { "id": 7, "nombre": "Detalle Muerte Fetal y menor 1 año" }
     ]
   },
   {
     "idmodulo": 3,
-    "submodulos": [{ "id": 1, "nombre": "Dirección Persona Fallecida" }]
+    "submodulos": [{ "id": 1, "nombre": "Dato Predeterminado" }]
   },
   {
     "idmodulo": 4,
-    "submodulos": [
-      { "id": 1, "nombre": "Dato Predeterminado" },
-      { "id": 2, "nombre": "Necropsia Perito" }
-    ]
+    "submodulos": [{ "id": 1, "nombre": "En este módulo no se generan Sub Módulos del SIRDEC" }]
+  },
+  {
+    "idmodulo": 5,
+    "submodulos": [{ "id": 1, "nombre": "Dirección Persona Fallecida" }]
   }
 ]
