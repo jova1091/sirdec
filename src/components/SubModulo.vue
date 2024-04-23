@@ -83,9 +83,24 @@ function removeActiveLi() {
 .v-leave-to {
   opacity: 0;
 }
-
+li {
+  position: relative;
+}
 li::before {
+  visibility: hidden;
+  content: " ";
+  position: absolute;
+  width: 150px;
+  height: 3px;
   background: rgb(71, 196, 172);
   background: linear-gradient(90deg, rgba(71, 196, 172, 1) 0%, rgba(87, 158, 229, 1) 100%);
+  border-radius: 20px;
+  right: 0px;
+  top: calc(50% - 1.5px);
+  transition: all 0.5s linear;
+}
+li.active::before {
+  visibility: visible;
+  right: -147px;
 }
 </style>
