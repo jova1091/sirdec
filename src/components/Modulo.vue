@@ -18,7 +18,7 @@
           v-bind:id="`mod_${value.id}`"
           v-bind:data-modulo="value.id"
           @click="[obtainLi(value.id)]"
-          class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:bg-yellow-300 hover:text-black hover:border-yellow-300 transition-all delay-[0.25s] ease-out"
+          class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:text-white transition-all delay-[0.25s] ease-out"
         >
           {{ value.nombre }}
         </li>
@@ -76,6 +76,40 @@ li::before {
   right: 0px;
   top: calc(50% - 1.5px);
   transition: all 0.5s linear;
+}
+
+li:nth-child(1):hover {
+  background: #ff8939;
+  border-color: #ff8939;
+}
+li:nth-child(2):hover {
+  background: #4472c4;
+  border-color: #4472c4;
+}
+li:nth-child(3):hover {
+  background: #6ba538;
+  border-color: #6ba538;
+}
+li:nth-child(4):hover {
+  background: #868686;
+  border-color: #868686;
+}
+
+li.active:nth-child(1) {
+  background: #ff8939;
+  border-color: #ff8939;
+}
+li.active:nth-child(2) {
+  background: #4472c4;
+  border-color: #4472c4;
+}
+li.active:nth-child(3) {
+  background: #6ba538;
+  border-color: #6ba538;
+}
+li.active:nth-child(4) {
+  background: #868686;
+  border-color: #868686;
 }
 
 li.active::before {
