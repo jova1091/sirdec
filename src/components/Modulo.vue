@@ -94,7 +94,9 @@ li:nth-child(4):hover {
   background: #868686;
   border-color: #868686;
 }
-
+li.active {
+  color: #ffffff;
+}
 li.active:nth-child(1) {
   background: #ff8939;
   border-color: #ff8939;
