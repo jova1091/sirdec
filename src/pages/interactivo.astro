@@ -4,11 +4,29 @@ import Convenciones from '../components/Convenciones.astro';
 import Modulo from '../components/Modulo.vue';
 import Variable from '../components/Variable.vue';
 import SubModulo from '../components/SubModulo.vue';
+import Modal from '../components/Modal.astro';
+
+const GENPATH = import.meta.env.BASE_URL;
 
 --- 
 <BaseLayout>
   <div class="container columns-1 mx-auto text-center text-pretty">
     <p class="my-4">Haz clic en cada módulo del SIRDEC para desplegar los submódulos y descubrir las variables que afectan al RUAFND</p>
+    <div>
+      <Modal id="recuerda" open="Recuerda" color="#47C0A8" bck="#214361">
+          <button class="text-4xl font-light text-white block hover:font-bold" slot="close">X</button>
+          <main slot="main">
+            <div class="flex">
+              <div class="w-1/4">
+                <img src=`${GENPATH}/img/bck-modal.png` class="w-full" alt="">
+              </div>
+              <div class="w-3/4 px-40 flex items-center">
+                <p class="text-white">Recuerde que para generar Certificado Antecedente de Defunción  se deben diligenciar todas las variables en los submódulos de cadáver en la plataforma del SIRDEC. Finalizado el proceso de registro el sistema asigna de manera automática el número del certificado y le  permitirá imprimir el documento para que los familiares realicen los trámites de Registro Civil de la Defunción y la disposición final del cadáver.</p>
+              </div>
+            </div>
+          </main>
+        </Modal>
+    </div>
   </div>
   <div class="block relative my-6 main min-h-[calc(100vh-280px)]">
     <div class="container columns-3 mx-auto grid grid-cols-3 gap-28 text-pretty">
@@ -21,3 +39,10 @@ import SubModulo from '../components/SubModulo.vue';
     <Convenciones />
   </div>
 </BaseLayout>
+
+<script>
+   window.addEventListener("load", function (event) {
+    const dialog = document.getElementById("recuerda");
+    dialog.showModal();
+  });
+</script>

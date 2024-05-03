@@ -69,7 +69,7 @@ input[type="checkbox"] {
   position: relative;
   display: block;
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
   background: transparent;
   cursor: pointer;
   border-radius: 0.75rem;

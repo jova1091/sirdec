@@ -1,5 +1,5 @@
 ---
-const {id, open, color} = Astro.props;
+const {id, open, color, bck} = Astro.props;
 ---
 <style>
   dialog {
@@ -23,19 +23,19 @@ const {id, open, color} = Astro.props;
 
 <button 
   onclick=`document.getElementById("${id}").showModal()`
-  class=`border text-white bg-[${color}] hover:border-[#FFDA71] hover:bg-[#FFDA71] hover:text-black mr-3 py-1 px-3 rounded-3xl flex justify-center transition-all delay-[0.25s] ease-out`
+  class=`border text-white bg-[${color}] hover:border-[#FFD671]] hover:bg-[#FFD671] hover:text-black mr-3 py-1 px-3 rounded-3xl flex justify-center transition-all delay-[0.25s] ease-out`
 >
   {open}
 </button>
 
-<dialog id=`${id}` class="bg-[#FFDA71] rounded-3xl py-8 px-16">
-  <div class=" h-full">
+<dialog id=`${id}` class=`bg-[${bck}] rounded-3xl py-8 px-16`>
+  <div class="h-full">
     <div class="flex justify-end mb-3">
       <form method="dialog">
         <slot name="close" />
       </form>
     </div>
-    <div class="h-4/5 flex items-center">
+    <div class="h-[95%] flex items-center">
       <slot name="main" />
     </div>
   </div>
