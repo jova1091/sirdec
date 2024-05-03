@@ -66,11 +66,6 @@ function obtainLi(el) {
     addSubModulo(submodulos);
     addVariables(variables);
     color.set(bck);
-    if (submoduloLis.length > 0) {
-      submoduloLis.forEach(function (submoduloLi) {
-        submoduloLi.style.setProperty("--bg-color", bck);
-      });
-    }
   }
 }
 </script>
