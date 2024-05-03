@@ -3,16 +3,16 @@ import BaseLayout from '../layouts/base.astro'
 const GENPATH = import.meta.env.BASE_URL;
 ---
 <BaseLayout>
-<img src=`${GENPATH}/img/head.png` class="w-full mb-8" alt="">
+<img src=`${GENPATH}/img/head.jpg` class="w-full mb-8" alt="">
 <div class="container mx-auto grid grid-cols-3 gap-5 text-pretty">
   <p>El proceso de <strong>certificación de las defunciones de interés forense</strong> se realiza <strong>desde plataforma de SIRDEC</strong> requiere un correcto diligenciamiento de las variables que se encuentran en los diferentes sub módulos del modulo de cadáveres. 
   </p>
   <p>La información de las variables registradas en el módulo de cadáveres del SIRDEC, están homologadas y <strong>migran</strong> automáticamente al aplicativo <strong>RUAFND</strong> (fuente oficial de las Estadísticas Vitales) a través de un servicio web, lo que implica que los datos consignados en SIRDEC equivalen para efectos legales al certificado de defunción.  
   </p>
   <div class="flex text-pretty flex-col">
-    <p class="border-t border-[#333333] pt-4 mb-5">A continuación y a manera de síntesis se realiza un recorrido por los sub módulos de cadáveres y su correspondencia con las variables del certificado de defunción.
+    <p class="mb-10">A continuación y a manera de síntesis se realiza un recorrido por los sub módulos de cadáveres y su correspondencia con las variables del certificado de defunción.
     </p>
-    <a href=`${GENPATH}/interactivo` class="border border-[#FFDA71] bg-[#FFDA71] hover:border-[#214361] hover:bg-[#214361] hover:text-[#FFDA71] self-end py-1 px-6 rounded-3xl mt-4" target="_self" rel="noopener noreferrer">Iniciar</a>
+    <a href=`${GENPATH}/interactivo` class="border border-[#FFDA71] bg-[#FFDA71] hover:border-[#214361] hover:bg-[#214361] hover:text-[#FFDA71] self-end py-1 px-6 rounded-3xl mt-8" target="_self" rel="noopener noreferrer">Iniciar</a>
   </div>
 </div>
 </BaseLayout>

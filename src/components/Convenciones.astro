@@ -28,6 +28,23 @@ const GENPATH = import.meta.env.BASE_URL;
       <img src=`${GENPATH}/img/inicio.png` class="w-5 h-5 mr-3" alt="">
       <h5 class="font-bold text-l">Inicio</h5>
     </div>
+    <div class="ocultar">
+      <Modal id="fullScreen" open="Importante" color="#47C0A8" bck="#579EE5">
+          <button class="text-4xl font-light block hover:font-bold z-10" slot="close">X</button>
+          <main slot="main">
+            <div class="flex">
+              <div class="w-1/3">
+                <img src=`${GENPATH}/img/bck-full.png` class="w-full" alt="">
+              </div>
+              <div class="w-2/3 px-40 flex flex-col justify-center">
+                <p class="text-2xl font-semibold mb-6 mt-16 text-[#579EE5]">El certificado de defunción contiene los datos básicos del fallecido y datos claves de la muerte como:</p>
+                <p class="text-xl mb-6">Sitio, Identificación de la persona fallecida (nombres y documento de identidad), datos sociodemográficos: edad, sexo y pertenencia étnica del fallecido. Datos de geografía de residencia de la persona fallecida y ocurrencia de los hechos; datos específicos para muertes fetales y de mujeres en edad fértil, causas de muerte, así como los datos del certificador.</p>
+                <p class="text-xl mb-6">Todos estos provienen de los diferentes sub módulos del módulo cadáveres de  del SIRDEC como se detalla a continuación.</p>
+              </div>
+            </div>
+          </main>
+        </Modal>
+    </div>
     <div>
       <Modal id="instrucciones" open="Instrucciones" color="#47C0A8" bck="#FFD671">
           <button class="text-4xl font-light block hover:font-bold" slot="close">X</button>
@@ -37,13 +54,13 @@ const GENPATH = import.meta.env.BASE_URL;
               <p class="border-l border-black py-3 px-5 flex items-center">Sigue estas instrucciones y podrás aprovechar al máximo la funcionalidad de los botones interactivos para mejorar tu experiencia de navegación y uso de la aplicación </p>
             </div>
             <div class="container px-8 grid grid-cols-3 gap-5 text-pretty">
-              <div class="flex gap-5">
+              <!-- <div class="flex gap-5">
                 <img src=`${GENPATH}/img/ver.png` class="border rounded-lg border-black p-7 w-28 h-28" alt="">
                 <div class="flex items-center content-center flex-wrap">
                   <h5 class="font-bold text-2xl">Lorem</h5>
                   <p>Haz clic en el botón con el ícono de un ojo para abrir el campo de información</p>
                 </div>
-              </div>
+              </div> -->
               <div class="flex gap-5">
                 <img src=`${GENPATH}/img/cerrar.png` class="border rounded-lg border-black p-7 w-28 h-28" alt="">
                 <div class="flex items-center content-center flex-wrap">
@@ -85,5 +102,8 @@ const GENPATH = import.meta.env.BASE_URL;
     height: 10px;
     border-radius: 2px;
     display: inline-block;
+  }
+  .ocultar > button {
+    display: none;
   }
 </style>

@@ -30,12 +30,12 @@ const {id, open, color, bck} = Astro.props;
 
 <dialog id=`${id}` class=`bg-[${bck}] rounded-3xl py-8 px-16`>
   <div class="h-full">
-    <div class="flex justify-end mb-3">
+    <div class="flex justify-end mb-3 z-10 relative">
       <form method="dialog">
         <slot name="close" />
       </form>
     </div>
-    <div class="h-[95%] flex items-center">
+    <div class="h-[75%] flex items-center">
       <slot name="main" />
     </div>
   </div>
