@@ -7,7 +7,7 @@
       <p class="">Sub Módulo del SIRDEC a la que corresponde la información</p>
     </div>
     <Transition>
-      <div v-if="$show" class="flex-1">
+      <div v-if="$show && $color" class="flex-1">
         <ul
           id="submodulo"
           v-if="Object.values($subModulo).length"
@@ -19,8 +19,8 @@
             v-bind:id="`sub_${submodulo.id}`"
             @click="[setSubModulo(submodulo.id), obtainLi(submodulo.id)]"
             v-bind:data-subModulo="submodulo.id"
-            class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:text-white transition-all delay-[0.25s] ease-out"
-            v-bind:class="'hover:bg-[' + $color + '] hover:border-[' + $color + ']'"
+            class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:text-white transition-all ease-out"
+            v-bind:style="'--bg-color:' + $color"
           >
             {{ submodulo.nombre }}
           </li>

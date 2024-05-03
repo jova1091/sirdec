@@ -7,7 +7,7 @@
       <p class="">Variable RUAFND</p>
     </div>
     <Transition>
-      <div v-if="$show" class="flex-1">
+      <div v-if="$show && $variables" class="flex-1">
         <div
           v-if="Object.values($variables).length"
           class="h-full text-center bg-cover bg-center py-10 px-8 rounded-b-lg"

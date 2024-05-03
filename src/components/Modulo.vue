@@ -18,7 +18,7 @@
           v-bind:id="`mod_${value.id}`"
           v-bind:data-modulo="value.id"
           @click="[obtainLi(value.id)]"
-          class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:text-white transition-all delay-[0.25s] ease-out"
+          class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:text-white transition-all delay-0 ease-out"
         >
           {{ value.nombre }}
         </li>
@@ -42,30 +42,21 @@ function obtainLi(el) {
   show.set(false);
   let variables = [];
   let elem = document.getElementById("mod_" + el);
-  const submoduloLis = document.querySelectorAll("#submodulo li");
 
   if (elem && elem.matches("li")) {
-    let bgColor = getComputedStyle(elem).backgroundColor;
-    let bck;
-    if (bgColor.charAt(0) == "r") {
-      let col = bgColor.replace("rgb(", "").replace(")", "").split(",");
-      let r = parseInt(col[0], 10).toString(16);
-      let g = parseInt(col[1], 10).toString(16);
-      let b = parseInt(col[2], 10).toString(16);
-      bck = "#" + [r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("");
-    }
+    const bgColor = getComputedStyle(elem).backgroundColor;
     const ulmodulo = document.querySelectorAll("#modulo li");
+    const liData = elem.getAttribute("data-modulo");
+    moduloId.set(Number(liData));
+    const submodulos = DataSubModulo.find(({ idmodulo }) => idmodulo === moduloId.get());
     ulmodulo.forEach((element) => {
       element.classList.remove("active");
     });
-    const liData = elem.getAttribute("data-modulo");
     elem.classList.add("active");
-    moduloId.set(Number(liData));
-    const submodulos = DataSubModulo.find(({ idmodulo }) => idmodulo === moduloId.get());
-    show.set(true);
     addSubModulo(submodulos);
     addVariables(variables);
-    color.set(bck);
+    color.set(bgColor);
+    show.set(true);
   }
 }
 </script>
