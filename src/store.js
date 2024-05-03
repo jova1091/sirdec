@@ -3,6 +3,7 @@ import { atom, map } from "nanostores";
 export const moduloId = atom();
 export const subModuloId = atom();
 export const show = atom(false);
+export const color = atom();
 
 export const modulo = map({});
 export const subModulo = map({});

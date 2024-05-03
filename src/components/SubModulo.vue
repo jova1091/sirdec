@@ -19,7 +19,8 @@
             v-bind:id="`sub_${submodulo.id}`"
             @click="[setSubModulo(submodulo.id), obtainLi(submodulo.id)]"
             v-bind:data-subModulo="submodulo.id"
-            class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:text-white hover:bg-[#214361] hover:border-[#214361] transition-all delay-[0.25s] ease-out"
+            class="mb-2 py-2 rounded-xl border-2 text-white cursor-pointer hover:text-white transition-all delay-[0.25s] ease-out"
+            v-bind:class="'hover:bg-[' + $color + '] hover:border-[' + $color + ']'"
           >
             {{ submodulo.nombre }}
           </li>
@@ -31,11 +32,12 @@
 </template>
 
 <script setup>
-import { moduloId, subModulo, subModuloId, addVariables, show } from "../store";
+import { moduloId, subModulo, subModuloId, addVariables, show, color } from "../store";
 import { useStore } from "@nanostores/vue";
 import DataVariables from "../data/variable.json";
 
 const $show = useStore(show);
+const $color = useStore(color);
 const $subModulo = useStore(subModulo);
 const GENPATH = import.meta.env.BASE_URL;
 const $image = GENPATH + "/img/bg_submodulo.png";
@@ -61,14 +63,16 @@ function obtainLi(el) {
   let elem = document.getElementById("sub_" + el);
   if (elem && elem.matches("li")) {
     removeActiveLi();
-    elem.classList.add("bg-[#214361]", "border-[#214361]", "active");
+    elem.classList.add("active");
+    elem.style.setProperty("--bg-color", $color.value);
   }
 }
 
 function removeActiveLi() {
   const ulsubmodulo = document.querySelectorAll("#submodulo li");
   ulsubmodulo.forEach((element) => {
-    element.classList.remove("bg-[#214361]", "border-[#214361]", "active");
+    element.classList.remove("active");
+    element.style.setProperty("--bg-color", $color.value);
   });
 }
 </script>
@@ -86,6 +90,10 @@ function removeActiveLi() {
 li {
   position: relative;
 }
+li:hover {
+  background-color: var(--bg-color);
+  border-color: var(--bg-color);
+}
 li::before {
   visibility: hidden;
   content: " ";
@@ -102,5 +110,9 @@ li::before {
 li.active::before {
   visibility: visible;
   right: -147px;
+}
+li.active {
+  background-color: var(--bg-color);
+  border-color: var(--bg-color);
 }
 </style>

@@ -30,7 +30,7 @@
 <script setup>
 import DataModulo from "../data/modulo.json";
 import DataSubModulo from "../data/submodulo.json";
-import { moduloId, addVariables, addSubModulo, addModulo, modulo, show } from "../store.js";
+import { moduloId, addVariables, addSubModulo, addModulo, modulo, show, color } from "../store.js";
 import { useStore } from "@nanostores/vue";
 
 addModulo(DataModulo);
@@ -42,20 +42,42 @@ function obtainLi(el) {
   show.set(false);
   let variables = [];
   let elem = document.getElementById("mod_" + el);
+  const submoduloLis = document.querySelectorAll("#submodulo li");
+
   if (elem && elem.matches("li")) {
+    let bgColor = getComputedStyle(elem).backgroundColor;
+    let bck = rgbToHex(bgColor);
     const ulmodulo = document.querySelectorAll("#modulo li");
     ulmodulo.forEach((element) => {
-      element.classList.remove("bg-yellow-300", "text-black", "border-yellow-300", "active");
-      element.classList.add("text-white");
+      element.classList.remove("active");
     });
     const liData = elem.getAttribute("data-modulo");
-    elem.classList.add("bg-yellow-300", "text-black", "border-yellow-300", "active");
-    elem.classList.remove("text-white");
+    elem.classList.add("active");
     moduloId.set(Number(liData));
     const submodulos = DataSubModulo.find(({ idmodulo }) => idmodulo === moduloId.get());
     show.set(true);
     addSubModulo(submodulos);
     addVariables(variables);
+    color.set(bck);
+    if (submoduloLis.length > 0) {
+      submoduloLis.forEach(function (submoduloLi) {
+        submoduloLi.style.setProperty("--bg-color", bck);
+      });
+    }
+  }
+}
+
+function rgbToHex(col) {
+  if (col.charAt(0) == "r") {
+    col = col.replace("rgb(", "").replace(")", "").split(",");
+    let r = parseInt(col[0], 10).toString(16);
+    let g = parseInt(col[1], 10).toString(16);
+    let b = parseInt(col[2], 10).toString(16);
+    r = r.length == 1 ? "0" + r : r;
+    g = g.length == 1 ? "0" + g : g;
+    b = b.length == 1 ? "0" + b : b;
+    let colHex = "#" + r + g + b;
+    return colHex;
   }
 }
 </script>
