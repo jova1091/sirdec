@@ -58,12 +58,14 @@ function obtainLi(el) {
     show.set(true);
     addSubModulo(submodulos);
     addVariables(variables);
-    color.set(bck);
-    if (submoduloLis.length > 0) {
-      submoduloLis.forEach(function (submoduloLi) {
-        submoduloLi.style.setProperty("--bg-color", bck);
-      });
-    }
+    setTimeout(function () {
+      color.set(bck);
+      if (submoduloLis.length > 0) {
+        submoduloLis.forEach(function (submoduloLi) {
+          submoduloLi.style.setProperty("--bg-color", bck);
+        });
+      }
+    }, 800);
   }
 }
 
