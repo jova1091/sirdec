@@ -46,7 +46,14 @@ function obtainLi(el) {
 
   if (elem && elem.matches("li")) {
     let bgColor = getComputedStyle(elem).backgroundColor;
-    let bck = rgbToHex(bgColor);
+    let bck;
+    if (bgColor.charAt(0) == "r") {
+      let col = bgColor.replace("rgb(", "").replace(")", "").split(",");
+      let r = parseInt(col[0], 10).toString(16);
+      let g = parseInt(col[1], 10).toString(16);
+      let b = parseInt(col[2], 10).toString(16);
+      bck = "#" + [r, g, b].map((x) => x.toString(16).padStart(2, "0")).join("");
+    }
     const ulmodulo = document.querySelectorAll("#modulo li");
     ulmodulo.forEach((element) => {
       element.classList.remove("active");
@@ -58,28 +65,12 @@ function obtainLi(el) {
     show.set(true);
     addSubModulo(submodulos);
     addVariables(variables);
-    setTimeout(function () {
-      color.set(bck);
-      if (submoduloLis.length > 0) {
-        submoduloLis.forEach(function (submoduloLi) {
-          submoduloLi.style.setProperty("--bg-color", bck);
-        });
-      }
-    }, 800);
-  }
-}
-
-function rgbToHex(col) {
-  if (col.charAt(0) == "r") {
-    col = col.replace("rgb(", "").replace(")", "").split(",");
-    let r = parseInt(col[0], 10).toString(16);
-    let g = parseInt(col[1], 10).toString(16);
-    let b = parseInt(col[2], 10).toString(16);
-    r = r.length == 1 ? "0" + r : r;
-    g = g.length == 1 ? "0" + g : g;
-    b = b.length == 1 ? "0" + b : b;
-    let colHex = "#" + r + g + b;
-    return colHex;
+    color.set(bck);
+    if (submoduloLis.length > 0) {
+      submoduloLis.forEach(function (submoduloLi) {
+        submoduloLi.style.setProperty("--bg-color", bck);
+      });
+    }
   }
 }
 </script>
